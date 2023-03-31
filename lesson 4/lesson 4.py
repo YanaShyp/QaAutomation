@@ -2,8 +2,17 @@
 # який видалить (не створить новий, а саме видалить!) з нього всі числа, які менше 21 і більше 74.
 
 my_list = [11, 77, 4, 22, 0, 56, 5, 95, 7, 5, 87, 13, 45, 67, 44]
-my_list = [range_numb for range_numb in my_list if range_numb > 21 and range_numb < 74]
+my_list2 = my_list.copy()
+print(id(my_list))
+
+for number in my_list2:
+    if number < 21 or number > 74:
+        my_list.remove(number)
+
 print(my_list)
+print(id(my_list))
+
+
 
 # task 2. Є два довільних числа які відповідають за мінімальну і максимальну ціну. Є Dict з назвами магазинів і цінами:
 # { "citos": 47.999, "BB_studio" 42.999, "mo-no": 49.999, "my-main-service": 37.245, "buy-now": 38.324,

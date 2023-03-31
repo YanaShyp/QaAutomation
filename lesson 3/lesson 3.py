@@ -41,8 +41,6 @@ for element in answer_list:
         strip_element = element.strip(".,?:!")
         if strip_element.endswith(capital) or strip_element.endswith(non_capital):
             res += 1
-        else:
-            res == 0
     else:
         print("Невірні дані")
 
