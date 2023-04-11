@@ -21,7 +21,7 @@ def my_function(arg1, arg2):
     return res
 
 
-user_constanta = my_function("paper", (1.5, "list", None))
+user_constanta = my_function(True, False)
 print(user_constanta)
 
 
@@ -42,65 +42,65 @@ print(user_constanta)
 #     User == AI
 
 
-from random import randint
-
-
-def get_ai_number():
-    number = randint(1, 10)
-    print(f'AI: {number}')
-    return number
-
-
-def get_user_number(msg):
-    while True:
-        try:
-            return int(input(f'{msg} (int): '))
-        except ValueError:
-            print('Number please!')
-
-
-def check_numbers(ai_number, user_number):
-    result = ai_number == user_number
-    print(f'Result is: {result}')
-    return result
-
-
-def tips_for_users(ai_number, user_number):
-    difference = abs(ai_number - user_number)
-    if difference > 10:
-        print("Cold!")
-    elif 10 >= difference >= 5:
-        print("Warm!")
-    elif 5 > difference > 1:
-        print("Hot!")
-
-
-def game_guess_number():
-    print('Game begins!')
-
-    ai_number = get_ai_number()
-    user_attempts = get_user_number('How many attempts do you want to try? ')
-    attempts = 0
-
-    while attempts < user_attempts:
-        user_number = get_user_number('Enter the number. ')
-
-        attempts += 1
-
-        is_game_end = check_numbers(ai_number, user_number)
-
-        if is_game_end:
-            print('User win')
-            return
-        else:
-            print('Wrong, try again!')
-
-        if attempts >= user_attempts:
-            print("You have no more attempts!")
-            print('User loose!')
-            return
-
-        tips_for_users(ai_number, user_number)
-
-
-game_guess_number()
+# from random import randint
+#
+#
+# def get_ai_number():
+#     number = randint(1, 10)
+#     print(f'AI: {number}')
+#     return number
+#
+#
+# def get_user_number(msg):
+#     while True:
+#         try:
+#             return int(input(f'{msg} (int): '))
+#         except ValueError:
+#             print('Number please!')
+#
+#
+# def check_numbers(ai_number, user_number):
+#     result = ai_number == user_number
+#     print(f'Result is: {result}')
+#     return result
+#
+#
+# def tips_for_users(ai_number, user_number):
+#     difference = abs(ai_number - user_number)
+#     if difference > 10:
+#         print("Cold!")
+#     elif 10 >= difference >= 5:
+#         print("Warm!")
+#     elif 5 > difference > 1:
+#         print("Hot!")
+#
+#
+# def game_guess_number():
+#     print('Game begins!')
+#
+#     ai_number = get_ai_number()
+#     user_attempts = get_user_number('How many attempts do you want to try? ')
+#     attempts = 0
+#
+#     while attempts < user_attempts:
+#         user_number = get_user_number('Enter the number. ')
+#
+#         attempts += 1
+#
+#         is_game_end = check_numbers(ai_number, user_number)
+#
+#         if is_game_end:
+#             print('User win')
+#             return
+#         else:
+#             print('Wrong, try again!')
+#
+#         if attempts >= user_attempts:
+#             print("You have no more attempts!")
+#             print('User loose!')
+#             return
+#
+#         tips_for_users(ai_number, user_number)
+#
+#
+# game_guess_number()
