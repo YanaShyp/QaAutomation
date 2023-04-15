@@ -12,27 +12,22 @@ users = our_users.get("users", [])
 for user in users:
     addresses = user.get("address", {})
     if user.get("address", {}).get("city") == "Louisville":
-        print(user.get("firstName"))
+        print(user.get("firstName") + " lives in Louisville")
 
-    # print(isinstance(addresses, dict))
-
-    # total_users_Louisville = []
-    # for address in addresses:
-    #     if "city" == "Louisville":
-    #         print(address)
-
-    # for address in addresses:
-    #     if addresses["city"] == "Louisville":
-    #         print(addresses.get("city"))
+age = []
+for user in users:
+    hair = user.get("hair", {})
+    if hair.get("color") == "Brown":
+        for key, value in user.items():
+            if key == "age":
+                age.append(value)
 
 
+avg_age = sum(age)/len(age)
+print("Average age of people with brown hair is", int(avg_age))
 
 
 
-# for user in users:
-#     if user.get('age') > 30:
-#         total_users_Louisville.append(user)
-#         print(total_users_Louisville)
 
 
 
