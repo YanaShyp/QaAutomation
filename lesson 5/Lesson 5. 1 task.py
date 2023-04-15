@@ -26,15 +26,3 @@ for user in users:
 avg_age = sum(age)/len(age)
 print("Average age of people with brown hair is", int(avg_age))
 
-
-
-
-
-
-
-
-
-
-
-
-pass
