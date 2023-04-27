@@ -25,4 +25,3 @@ for good in goods:
 
 print(total_cost)
 print(total_without_gluten_cost)
-a = 0
