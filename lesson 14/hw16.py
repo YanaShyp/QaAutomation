@@ -27,10 +27,11 @@ class TestQautoApi:
                           json=user_to_register.__dict__)
 
     def test_user_to_login(self):
-        user_to_login = UserLogin("yan", "YanaShevchenko", False)
+        user_to_login = UserLogin("yana@test.com", "YanaShevchenko", False)
 
         result = self.session.post(url="https://qauto2.forstudy.space/api/auth/signin",
                                    json=user_to_login.__dict__)
+        assert result.json()["status"] == "ok"
 
     def teardown_class(self):
         self.session.delete("https://qauto2.forstudy.space/api/users")
