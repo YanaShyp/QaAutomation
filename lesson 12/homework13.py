@@ -1,4 +1,4 @@
-from lesson12.driver import Driver
+from driver import Driver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
