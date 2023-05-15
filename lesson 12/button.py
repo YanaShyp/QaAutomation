@@ -1,6 +1,6 @@
 
 class Button:
-    def __int__(self, button_element):
+    def __init__(self, button_element):
         self.element = button_element
 
     def click(self):

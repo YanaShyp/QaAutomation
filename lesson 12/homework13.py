@@ -1,20 +1,31 @@
 from driver import Driver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from detail_page import DetailPage
+from search_result_page import SearchResultPage
+from main_page import MainPage
 
 
-def test_swabber_buy_button_rozetka():
-    driver = webdriver.Chrome()
-    driver.implicitly_wait(2)
-    driver.get("https://rozetka.com.ua/ua/")
-    driver.find_element(By.XPATH, "//input[@placeholder='Я шукаю...']").send_keys(f"швабра {Keys.ENTER}")
-    driver.find_element(By.XPATH,
-                        "//*[text()=' Миюча Швабра Xiaomi Deerma Spray Mop White (TB500) (З розпилювачем для "
-                        "вологого прибирання) ']").click()
-    buy_icon = driver.find_element(By.XPATH,
-                                   "//*[@class='buy-button button button--with-icon button--green button--medium "
-                                   "buy-button--tile ng-star-inserted']")
-    assert buy_icon.is_displayed()
+class TestSwabberRozetka:
+
+    def setup_class(self):
+        self.driver = Driver.get_driver()
+        self.search_result_page = SearchResultPage()
+        self.main_page = MainPage()
+        self.detail_page = DetailPage()
+
+    def setup_method(self):
+        self.driver.get("https://rozetka.com.ua/ua/")
+        self.driver.implicitly_wait(2)
+
+    def test_swabber_buy_button_rozetka(self):
+        self.main_page.search_field_main().send_keys(f"швабра {Keys.ENTER}")
+        self.search_result_page.text_element().click()
+        assert self.detail_page.buy_button_detail().is_displayed()
+
+    def teardown_method(self):
+        pass
+
+    def teardown_class(self):
+        self.driver.quit()
 
 
-test_swabber_buy_button_rozetka()
