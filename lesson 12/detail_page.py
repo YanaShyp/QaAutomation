@@ -11,8 +11,8 @@ class DetailPage:
 
     def buy_button_detail(self):
         self.buy_button = Button(self.driver.find_element(By.XPATH,
-                                   "//*[@class='buy-button button button--with-icon button--green button--medium "
-                                   "buy-button--tile ng-star-inserted']"))
+                                   "//*[@class='buy-button button button--with-icon button--green button--medium"
+                                   " buy-button--tile ng-star-inserted']"))
 
         return self.buy_button
 

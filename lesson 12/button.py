@@ -6,5 +6,6 @@ class Button:
     def click(self):
         self.element.click()
 
-    def is_enabled(self):
-        self.element.is_enabled()
+    def is_displayed(self):
+        self.element.is_displayed()
+

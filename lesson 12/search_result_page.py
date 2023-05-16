@@ -10,7 +10,5 @@ class SearchResultPage:
         self.xiaomi_swabber: Text = None
 
     def text_element(self):
-        self.xiaomi_swabber = Text(self.driver.find_element(By.XPATH,
-                        "//*[text()=' Миюча Швабра Xiaomi Deerma Spray Mop White (TB500) (З розпилювачем для "
-                        "вологого прибирання) ']"))
+        self.xiaomi_swabber = Text(self.driver.find_element(By.XPATH, "//*[@class='lite-tile']"))
         return self.xiaomi_swabber

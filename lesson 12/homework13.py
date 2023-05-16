@@ -19,8 +19,8 @@ class TestSwabberRozetka:
 
     def test_swabber_buy_button_rozetka(self):
         self.main_page.search_field_main().send_keys(f"швабра {Keys.ENTER}")
-        self.search_result_page.text_element().click()
-        assert self.detail_page.buy_button_detail().is_displayed()
+        self.search_result_page.text_element().click_on_text()
+        self.detail_page.buy_button_detail().is_displayed()
 
     def teardown_method(self):
         pass
