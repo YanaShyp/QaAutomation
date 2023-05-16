@@ -1,4 +1,4 @@
-class Input:
+class KeysToField:
     def __init__(self, input_element):
         self.element = input_element
 
